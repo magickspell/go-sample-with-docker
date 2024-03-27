@@ -1,15 +1,18 @@
 package main
 
 import (
-  "fmt"
-  "net/http"
+	"fmt"
+	"net/http"
 )
 
 func main() {
-  http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, World! 3")
-  })
+	const numStr string = "2"
 
-  fmt.Println("Server starting on port 8080...")
-  http.ListenAndServe(":8080", nil)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello, World! "+numStr)
+	})
+
+	fmt.Println("Server starting on port 8080...")
+	fmt.Println(numStr)
+	http.ListenAndServe(":8080", nil)
 }

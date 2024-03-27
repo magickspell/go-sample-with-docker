@@ -1,1 +1,3 @@
-module example.com/my/thing
+module my-module
+
+go 1.22.1
